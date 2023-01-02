@@ -1,0 +1,43 @@
+
+name: Github to CodeCommit Sync
+description: 'Creating a new commit instead of mirrorig to synchronize from github to AWS Codecommit using actions and AWS CLI credentials'
+author: 'aaditya'
+branding:
+  icon: git-commit
+  color: gray-dark
+inputs:
+  repository_name:
+    description: CodeCommit repository name.
+    required: true
+  aws_region:
+    description: Region of the CodeCommit repository.
+    required: true
+  source_branch:
+    description: Branch to take from source repo
+    required: false
+    defualt: 'main'
+  destination_branch:
+    description: Branch to take from destination repo
+    required: false
+    defualt: 'main'
+  folders_to_copy:
+    description: Folders to copy from source to destination
+    required: false
+  github_before:
+    description: Github Context before
+    required: true    
+  github_after:
+    description: Github Context after
+    required: true 
+  automated_user_email:
+    description: Automated user email to create commit
+    required: false
+    default: 'automated@user.com'
+  automated_user_name:
+    description: Automated user namne to create commit
+    required: false
+    default: 'Automated User'
+runs:
+  using: 'docker'
+  image: './dockerfile'
+
