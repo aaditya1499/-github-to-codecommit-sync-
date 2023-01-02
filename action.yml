@@ -1,5 +1,5 @@
 
-name: Github to CodeCommit Sync
+name: Github to AWS CodeCommit Sync
 description: 'Creating a new commit instead of mirrorig to synchronize from github to AWS Codecommit using actions and AWS CLI credentials'
 author: 'aaditya'
 branding:
